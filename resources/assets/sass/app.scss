@@ -184,6 +184,8 @@ input {
   }
 }
 
+/* Users index */
+
 .users {
   list-style: none;
   margin: 0;
@@ -193,4 +195,10 @@ input {
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
   }
+}
+
+.delete-btn {
+  float: right;
+  position: relative;
+  right: 0;
 }
