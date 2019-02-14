@@ -50,4 +50,18 @@ class User extends Authenticatable
     {
         $this->notify(new ResetPassword($token));
     }
+
+
+    public function statuses()
+    {
+        return $this->hasMany(Status::class);
+    }
+
+    // 在用户模型中定义一个 feed 方法，该方法将当前用户发布过的所有微博从数据库中取出，并根据创建时间来倒序排序。
+    public function feed()
+    {
+        return $this->statuses()
+                    ->orderBy('created_at', 'desc');
+    }
+
 }

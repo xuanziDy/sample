@@ -8,6 +8,7 @@ class DatabaseSeeder extends Seeder
     /**
      * Run the database seeds.
      *
+     * 命令： php artisan migrate:refresh --seed
      * @return void
      */
     public function run()
@@ -15,6 +16,7 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call(UsersTableSeeder::class);
+        $this->call(StatusesTableSeeder::class);
 
         Model::reguard();
     }
